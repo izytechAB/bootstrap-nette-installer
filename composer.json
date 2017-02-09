@@ -1,5 +1,5 @@
 {
-    "name": "michalhisim/nette-twitter-bootstrap-installer",
+    "name": "izytechab/bootstrapNetteInstaller",
     "description": "Composer post-install helper for Twitter bootstrap in Nette",
     "keywords": ["installer", "twitter-bootstrap", "nette"],
     "license": "MIT",
