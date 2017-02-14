@@ -21,7 +21,7 @@ class ScriptHandler {
         $vendorDir = $configOptions['vendor-dir'];
 
         if (!is_dir($vendorDir)) {
-            echo "The vendor-dir ($vendorDir) specified in composer.json was not found in " . getcwd() . ", can not build bootstrap file.\n";
+            $event->getIO()->write("<info>The vendor-dir ($vendorDir) specified in composer.json was not found in " . getcwd() . ", can not build bootstrap file.\n</info>");
 
             return;
         }
@@ -29,7 +29,8 @@ class ScriptHandler {
         $extraOptions = self::getExtraOptions($event);
         $webDir = $extraOptions['nette-web-dir'];
         if (!is_dir($webDir)) {
-            echo "The nette-web-dir ($webDir) specified in composer.json was not found in " . getcwd() . ", can not build bootstrap file.\n";
+            echo "";
+            $event->getIO()->write("<info>The nette-web-dir ($webDir) specified in composer.json was not found in " . getcwd() . ", can not build bootstrap file.\n</info>");
 
             return;
         }
