@@ -58,7 +58,6 @@ class ScriptHandler {
     }
 
     static private function createDirectory($name) {
-        echo "Create dir {$name}\n";
         if (!is_dir($name)) {
             mkdir($name,$recursive=true);
         }
@@ -68,7 +67,6 @@ class ScriptHandler {
         $options = array_merge(array(
             'nette-web-dir' => 'www',
                 ), $event->getComposer()->getPackage()->getExtra());
-        print_r($options);
         return $options;
     }
 
