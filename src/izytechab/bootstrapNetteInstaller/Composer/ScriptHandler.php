@@ -2,19 +2,19 @@
 
 namespace izytechAB\bootstrapNetteInstaller\Composer;
 
-use \Composer\Script\CommandEvent;
+use \Composer\Script\Event;
 
 class ScriptHandler {
 
-    static public function postInstall(CommandEvent $event) {
+    static public function postInstall(Event $event) {
         self::installBootstrap($event);
     }
 
-    static public function postUpdate(CommandEvent $event) {
+    static public function postUpdate(Event $event) {
         self::installBootstrap($event);
     }
 
-    static private function installBootstrap(CommandEvent $event) {
+    static private function installBootstrap(Event $event) {
         $event->getIO()->write('<info>Generating bootstrap assets</info>');
 
         $configOptions = self::getConfigOptions($event);
@@ -63,7 +63,7 @@ class ScriptHandler {
         }
     }
 
-    static protected function getExtraOptions(CommandEvent $event) {
+    static protected function getExtraOptions(Event $event) {
         $options = array_merge(array(
             'nette-web-dir' => 'www',
                 ), $event->getComposer()->getPackage()->getExtra());
@@ -71,7 +71,7 @@ class ScriptHandler {
         return $options;
     }
 
-    static protected function getConfigOptions(CommandEvent $event) {
+    static protected function getConfigOptions(Event $event) {
         $allConfig = $event->getComposer()->getConfig()->all();
         
         $options = array_merge(array(
