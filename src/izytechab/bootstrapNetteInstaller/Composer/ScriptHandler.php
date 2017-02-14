@@ -67,7 +67,7 @@ class ScriptHandler {
         $options = array_merge(array(
             'nette-web-dir' => 'www',
                 ), $event->getComposer()->getPackage()->getExtra());
-
+        print_r($options);
         return $options;
     }
 
