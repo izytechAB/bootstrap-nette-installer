@@ -34,7 +34,7 @@ class ScriptHandler {
             return;
         }
 
-        $bootstrapDir = $vendorDir . "/twitter/bootstrap";
+        $bootstrapDir = $vendorDir . "/twitter/bootstrap/dist";
         
         self::createDirectory("$webDir/css/bootstrap");
         self::createDirectory("$webDir/js/bootstrap");
