@@ -57,7 +57,7 @@ class ScriptHandler {
     }
 
     static private function createDirectory($name) {
-        
+        echo "Create dir {$name}\n";
         if (!is_dir($name)) {
             mkdir($name,$recursive=true);
         }
